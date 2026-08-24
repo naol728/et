@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.class
+*.so
+.Python
+
+# Logs
+*.log
+production.log
+
+# Backups and temporary files
+backups/
+*.tmp*
+
+# Environment secrets
+.env
+
+# OS files
+.DS_Store
+Thumbs.db

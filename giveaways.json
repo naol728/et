@@ -1,0 +1,32 @@
+{
+  "gw_3c74acfd": {
+    "id": "gw_3c74acfd",
+    "cat_id": "p_44_framer_pro_12m",
+    "cat_name": "Framer Pro 12M",
+    "cat_type": "id_pass",
+    "safwan_product_id": 44,
+    "created_by": "6241860023",
+    "created_at": "2026-08-20 10:06:09",
+    "status": "claimed",
+    "winner_id": "6241860023",
+    "winner_username": "@Kidanewold777",
+    "claimed_at": "2026-08-20 10:06:30",
+    "channel_msg_id": null,
+    "channel_id": null
+  },
+  "gw_795fd104": {
+    "id": "gw_795fd104",
+    "cat_id": "p_1_gemini_pro_18m_links",
+    "cat_name": "Gemini Pro 18M Links",
+    "cat_type": "link",
+    "safwan_product_id": 1,
+    "created_by": "7486085143",
+    "created_at": "2026-08-22 12:47:40",
+    "status": "claimed",
+    "winner_id": "1675909278",
+    "winner_username": "@mrdef4fult",
+    "claimed_at": "2026-08-22 12:48:21",
+    "channel_msg_id": null,
+    "channel_id": null
+  }
+}
