@@ -54,7 +54,7 @@ def get_product_department(cat: dict) -> str:
     return "ai"
 
 """
-Abyssinia Market Bot
+ET Market Bot
 Custom emoji via entities array (not HTML tg-emoji tags)
 icon_custom_emoji_id for buttons
 Python 3.14 compatible — raw aiohttp, no python-telegram-bot
@@ -112,7 +112,7 @@ try:
 except Exception:
     pass  # Serverless / read-only filesystem fallback to console logging
 
-logger = logging.getLogger("abyssinia_bot")
+logger = logging.getLogger("et01marketbot")
 
 # ─── ATOMIC PERSISTENCE & BACKUP SYSTEM ──────────────────────
 BACKUP_DIR = os.path.join(os.path.dirname(__file__), "backups")
@@ -620,7 +620,7 @@ try:
     LOG_CHANNEL_ID = int(_log_ch)
 except ValueError:
     LOG_CHANNEL_ID = _log_ch
-LOG_CHANNEL_LINK = _env.get("LOG_CHANNEL_LINK", "https://t.me/abyssinia_botlogs")
+LOG_CHANNEL_LINK = _env.get("LOG_CHANNEL_LINK", "https://t.me/+2RORZ17pHqNiYzM0")
 
 # Admin user IDs
 _admins_str = _env.get("ADMINS", "8708984302,7486085143,6241860023")
@@ -632,16 +632,16 @@ try:
     FORCE_JOIN_CHANNEL_ID = int(_fj_ch)
 except ValueError:
     FORCE_JOIN_CHANNEL_ID = _fj_ch
-FORCE_JOIN_CHANNEL_LINK = _env.get("FORCE_JOIN_CHANNEL_LINK", "https://t.me/AbyssiniaSocialMedia")
-FORCE_JOIN_CHANNEL_NAME = _env.get("FORCE_JOIN_CHANNEL_NAME", "Abyssinia Social Media")
-SUPPORT_LINK = _env.get("SUPPORT_LINK", "https://t.me/Abyssinia_SocialMedia")
+FORCE_JOIN_CHANNEL_LINK = _env.get("FORCE_JOIN_CHANNEL_LINK", "https://t.me/et_market_place")
+FORCE_JOIN_CHANNEL_NAME = _env.get("FORCE_JOIN_CHANNEL_NAME", "ET MARKET")
+SUPPORT_LINK = _env.get("SUPPORT_LINK", "https://t.me/mrdef4fult")
 DEVELOPER_LINK = _env.get("DEVELOPER_LINK", "https://t.me/kidanewold777")
 
 
 # ─── TERMS & CONDITIONS ───────────────────────────────────────
 TERMS_TEXT = """📃 Terms & Conditions
 
-Welcome to Abyssinia Market. By using our bot and services, you agree to the following terms:
+Welcome to ET Market. By using our bot and services, you agree to the following terms:
 
 1️⃣ Order Confirmation
 Please check the product name, duration, price, and requirements before placing an order.
@@ -967,7 +967,7 @@ class Msg:
         m = Msg()
         m.emoji("wave")
         m.text("  Welcome to ")
-        m.bold("Abyssinia Market")
+        m.bold("ET Market")
         m.text("\\n\\n")
         text, entities = m.build()
     """
@@ -1463,7 +1463,7 @@ async def send_join_prompt(chat_id):
         m = Msg()
         m.emoji("lock").text(" ").bold("Channel Membership Required").nl()
         m.text("━━━━━━━━━━━━━━━━━━━━").nl()
-        m.emoji("thunder").text(" To browse products and use ").bold("Abyssinia Market").text(", you must first join our official Telegram channel:").nl(2)
+        m.emoji("thunder").text(" To browse products and use ").bold("ET Market").text(", you must first join our official Telegram channel:").nl(2)
         m.emoji("channel").text(" Official Channel: ").bold(FORCE_JOIN_CHANNEL_NAME).nl()
         m.text("━━━━━━━━━━━━━━━━━━━━").nl()
         m.emoji("down").text(" Tap ").bold("Join Channel").text(" below, then tap ").bold("I've Joined").text(" to continue:")
@@ -1756,7 +1756,7 @@ def build_welcome(user: dict = None, db_data: dict = None):
         return render_text_template(custom["text"], custom.get("entities"), ctx)
 
     m = Msg()
-    m.emoji("wave").text(" ").bold("Welcome to Abyssinia Market!").nl()
+    m.emoji("wave").text(" ").bold("Welcome to ET Market!").nl()
     m.text("━━━━━━━━━━━━━━━━━━━━").nl()
     m.emoji("bot").text(" Your trusted destination for ").bold("digital subscriptions").text(", ").bold("AI accounts").text(", and ").bold("cloud developer tools").text(".").nl(2)
     
@@ -1774,7 +1774,7 @@ def build_welcome(user: dict = None, db_data: dict = None):
 
 def build_shop_paginated(total_products: int, page: int, total_pages: int):
     m = Msg()
-    m.emoji("shop").text(" ").bold("Abyssinia Store — Products").nl()
+    m.emoji("shop").text(" ").bold("ET Store — Products").nl()
     m.text("━━━━━━━━━━━━━━━━━━━━").nl()
     m.emoji("thunder").text(" Instant 24/7 Automated Delivery").nl()
     m.text("━━━━━━━━━━━━━━━━━━━━").nl()
@@ -1970,7 +1970,7 @@ def build_support_screen():
     m.text("━━━━━━━━━━━━━━━━━━━━").nl()
     m.emoji("thunder").text(" Need assistance with an order, payment, or digital account?").nl(2)
     m.emoji("check").text(" Our support team is ready to assist you 24/7.").nl(2)
-    m.emoji("user").text(" Official Support: ").bold("@Abyssinia_SocialMedia").nl()
+    m.emoji("user").text(" Official Support: ").bold("@et_market_place").nl()
     m.text("━━━━━━━━━━━━━━━━━━━━").nl()
     m.emoji("down").text(" Tap the button below to message our support directly:")
     return m.build()
@@ -1994,7 +1994,7 @@ def build_referral_screen(user: dict = None, db_data: dict = None):
         return (t, ent), kb
 
     m = Msg()
-    m.emoji("referral").text(" ").bold("Abyssinia Referral & Rewards").nl()
+    m.emoji("referral").text(" ").bold("ET Referral & Rewards").nl()
     m.text("━━━━━━━━━━━━━━━━━━━━").nl()
     m.emoji("timer").text(" ").bold("Coming Soon!").nl(2)
     m.text("Our automated referral & rewards program is currently under development.").nl(2)
@@ -2015,7 +2015,7 @@ def build_terms():
     m = Msg()
     m.emoji("clipboard").text(" ").bold("Terms & Conditions").nl()
     m.text("━━━━━━━━━━━━━━━━━━━━").nl()
-    m.text("Welcome to ").bold("Abyssinia Market").text(". By using our bot and services, you agree to the following terms:").nl(2)
+    m.text("Welcome to ").bold("ET Market").text(". By using our bot and services, you agree to the following terms:").nl(2)
     m.emoji("check").text(" ").bold("1. Order Confirmation:").text(" Please check product details before ordering.").nl()
     m.emoji("telebirr").text(" ").bold("2. Payment:").text(" Pay only via displayed accounts & confirm with reference.").nl()
     m.emoji("thunder").text(" ").bold("3. Delivery:").text(" Instant auto-delivery for stocked items; manual activation when required.").nl()
@@ -2082,7 +2082,7 @@ def build_bot_logs(filter_type: str = "all", page: int = 0, per_page: int = 5, v
     if header_text:
         m.raw_with_entities(header_text, header_ent).nl(2)
     else:
-        m.emoji("clipboard").text(" ").bold("Abyssinia Bot — Live Order Logs").nl()
+        m.emoji("clipboard").text(" ").bold("ET Bot — Live Order Logs").nl()
         m.text("━━━━━━━━━━━━━━━━━━━━").nl()
         m.emoji("thunder").text(" Live transparent audit & real-time order status tracking:").nl(2)
         m.emoji("box").text(" Total Orders: ").bold(f"{total_orders:,}").text("  •  ")
@@ -2090,7 +2090,7 @@ def build_bot_logs(filter_type: str = "all", page: int = 0, per_page: int = 5, v
         m.emoji("timer").text(" Pending: ").bold(f"{pending_count:,}").text("  •  ")
         m.emoji("cross").text(" Cancelled: ").bold(f"{cancelled_count:,}").nl()
         m.emoji("balance").text(" Total Volume: ").bold(f"Br {total_volume:,.2f} ETB").nl()
-        m.emoji("channel").text(" Official Logs Group: ").bold("@abyssinia_botlogs").nl()
+        m.emoji("channel").text(" Official Logs Group: ").bold("https://t.me/+2RORZ17pHqNiYzM0").nl()
         m.text("━━━━━━━━━━━━━━━━━━━━").nl()
 
     filter_title = {
@@ -2225,7 +2225,7 @@ def build_dev_screen():
     m.emoji("diamond").text(" ").bold("Developer & Engineering Profile").nl()
     m.text("━━━━━━━━━━━━━━━━━━━━").nl()
     m.emoji("star").text(" Lead Architect: ").bold("@kidanewold777").nl()
-    m.emoji("thunder").text(" System: ").bold("Abyssinia Market Engine 2.0").nl()
+    m.emoji("thunder").text(" System: ").bold("ET Market Engine 2.0").nl()
     m.emoji("check").text(" Status: ").bold("Verified Official Bot Developer ✅").nl()
     m.text("━━━━━━━━━━━━━━━━━━━━").nl()
     m.emoji("bot").text(" ").bold("Core Engineering & Innovations:").nl()
@@ -2250,7 +2250,7 @@ def build_menu():
 def build_ping():
     m = Msg()
     m.emoji("thunder").text(" ").bold("Pong!").nl()
-    m.emoji("check").text(" Abyssinia Market Bot is online and running smoothly.")
+    m.emoji("check").text(" ET Market Bot is online and running smoothly.")
     return m.build()
 
 def build_help():
@@ -2266,7 +2266,7 @@ def build_help():
     m = Msg()
     m.emoji("support").text(" ").bold("Help & Bot Commands").nl()
     m.text("━━━━━━━━━━━━━━━━━━━━").nl()
-    m.emoji("bot").text(" Here are the commands you can use in ").bold("Abyssinia Market").text(":").nl(2)
+    m.emoji("bot").text(" Here are the commands you can use in ").bold("ET Market").text(":").nl(2)
     m.emoji("shop").text(" • ").bold("/start").text(" — Open main menu / shop\n")
     m.emoji("cart").text(" • ").bold("/shop").text(" — Browse available digital products\n")
     m.emoji("wallet").text(" • ").bold("/wallet").text(" — Check balance & deposit funds\n")
@@ -2275,7 +2275,7 @@ def build_help():
     m.emoji("referral").text(" • ").bold("/referral").text(" — Referral & rewards program\n")
     m.emoji("support").text(" • ").bold("/support").text(" — Contact customer support\n")
     m.emoji("channel").text(" • ").bold("/channel").text(" — Official updates channel\n\n")
-    m.emoji("star").text(" Need help with an active order? Message ").bold("@Abyssinia_SocialMedia")
+    m.emoji("star").text(" Need help with an active order? Message ").bold("@et_market_place")
     return m.build()
 
 def build_test():
@@ -2910,10 +2910,10 @@ async def get_bot_username() -> str:
     if not _bot_username:
         try:
             data = await api_call("getMe", {})
-            _bot_username = data.get("result", {}).get("username") or "AbyssiniaMarket_bot"
+            _bot_username = data.get("result", {}).get("username") or "et_market_place"
         except Exception:
-            _bot_username = "AbyssiniaMarket_bot"
-    return _bot_username or "AbyssiniaMarket_bot"
+            _bot_username = "et_market_place"
+    return _bot_username or "et_market_place"
 
 # ─── DATABASE ─────────────────────────────────────────────────
 # ─── DATABASE (JSON) ──────────────────────────────────────────
@@ -4010,7 +4010,7 @@ async def fulfill_order_auto(order_id: str, verified_amount: float = None, sende
             m.code(c).nl()
         m.nl()
         
-    m.emoji("thunder").text(" ").italic("Thank you for shopping with Abyssinia Market!")
+    m.emoji("thunder").text(" ").italic("Thank you for shopping with ET Market!")
     t, ent = m.build()
     
     delivery_buttons.append([btn("🛒 Shop More", "shop", emoji_key="shop", style="success" if not delivery_buttons else None)])
@@ -4050,7 +4050,7 @@ async def process_giveaway_claim(chat_id, user: dict, gw_id: str):
             m = Msg()
             m.emoji("pop").text(" ").bold("Congratulations! You won the giveaway!").nl(2)
             m.emoji("shop").text(" Product: ").bold(cat_name).nl()
-            m.text("Please contact support @Abyssinia_SocialMedia to claim your prize.")
+            m.text("Please contact support @et_market_place to claim your prize.")
             t, ent = m.build()
             await send_msg(chat_id, t, ent, kb_main(user.get("id")))
     else:
@@ -4097,7 +4097,7 @@ async def process_inbot_giveaway_claim(chat_id, user: dict, gw_id: str, cq_id: s
             m = Msg()
             m.emoji("pop").text(" ").bold("Congratulations! You won the giveaway!").nl(2)
             m.emoji("shop").text(" Product: ").bold(cat_name).nl()
-            m.text("Please contact support @Abyssinia_SocialMedia to claim your prize.")
+            m.text("Please contact support @et_market_place to claim your prize.")
             t, ent = m.build()
             await send_msg(chat_id, t, ent, kb_main(user.get("id")))
     else:
@@ -4585,7 +4585,7 @@ async def _handle_admin_state(chat_id, user_id, text: str, message: dict) -> boo
         dm.emoji("link").text(" ").bold("Your Activation Link / Access:").nl()
         dm.code(link).nl(2)
         dm.italic("Tap the button below or copy the link to access and activate your subscription!").nl(2)
-        dm.emoji("thunder").text(" Thank you for shopping with ").bold("Abyssinia Market").text("!")
+        dm.emoji("thunder").text(" Thank you for shopping with ").bold("ET Market").text("!")
         deliver_text, deliver_ent = dm.build()
 
         kb_rows = []
@@ -4658,7 +4658,7 @@ async def _handle_admin_state(chat_id, user_id, text: str, message: dict) -> boo
         dm.text("Email: ").code(email).nl()
         dm.emoji("key").text(" Password: ").code(password).nl(2)
         dm.italic("Use the credentials above to log in to your account!").nl(2)
-        dm.emoji("thunder").text(" Thank you for shopping with ").bold("Abyssinia Market").text("!")
+        dm.emoji("thunder").text(" Thank you for shopping with ").bold("ET Market").text("!")
         deliver_text, deliver_ent = dm.build()
         await send_msg(buyer_id, deliver_text, deliver_ent,
             keyboard=build_keyboard([
@@ -5792,7 +5792,7 @@ async def handle_message(msg: dict):
         m.emoji("channel").text(" ").bold("Official Bot Logs Group").nl()
         m.text("━━━━━━━━━━━━━━━━━━━━").nl()
         m.emoji("thunder").text(" View real-time live order status updates, completed purchases, deposits, and restocks directly on our official logs group.").nl(2)
-        m.emoji("star").text(" Logs Group: ").bold("@abyssinia_botlogs").nl()
+        m.emoji("star").text(" Logs Group: ").bold("https://t.me/+2RORZ17pHqNiYzM0").nl()
         m.text("━━━━━━━━━━━━━━━━━━━━")
         t, ent = m.build()
         kb = build_keyboard([
@@ -6037,7 +6037,7 @@ async def handle_callback(cq: dict):
     if data == "accept_terms":
         user_id = user.get("id")
         await db_accept_terms(user_id)
-        await answer_cb(cq_id, "✅ Thank you! Welcome to Abyssinia Market!", alert=False)
+        await answer_cb(cq_id, "✅ Thank you! Welcome to ET Market!", alert=False)
         await api_call("deleteMessage", {"chat_id": chat_id, "message_id": mid})
         await send_welcome_screen(chat_id, user)
         return
@@ -7484,7 +7484,7 @@ async def handle_callback(cq: dict):
         await api_call("deleteMessage", {"chat_id": chat_id, "message_id": mid})
         await send_msg(chat_id,
             "🔗 *Set Force Join Channel Link*\n\n"
-            "Send your Channel Invite Link (e.g. `https://t.me/AbyssiniaSocialMedia`).\n\n"
+            "Send your Channel Invite Link (e.g. `https://t.me/et_market_place`).\n\n"
             "Type /cancel to abort.",
             keyboard=build_keyboard([[btn("Cancel", "admin_settings", emoji_key="cross")]])
         )
@@ -7651,7 +7651,7 @@ async def process_update(upd: dict):
 async def poll():
     offset = 0
     consecutive_errors = 0
-    logger.info("⚡ [PRODUCTION] Polling started — Abyssinia Market Bot is LIVE!")
+    logger.info("⚡ [PRODUCTION] Polling started — ET Market Bot is LIVE!")
     
     # Run initial database snapshot
     create_database_backup()
@@ -7726,7 +7726,7 @@ async def set_bot_commands():
 # ─── MAIN — Python 3.14 compatible ───────────────────────────
 async def main():
     logger.info("=" * 50)
-    logger.info("Abyssinia Market Bot Starting...")
+    logger.info("ET Market Bot Starting...")
     logger.info("=" * 50)
     await db_init()
     # Register hamburger menu commands
