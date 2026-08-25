@@ -623,7 +623,7 @@ except ValueError:
 LOG_CHANNEL_LINK = _env.get("LOG_CHANNEL_LINK", "https://t.me/+2RORZ17pHqNiYzM0")
 
 # Admin user IDs
-_admins_str = _env.get("ADMINS", "8708984302,7486085143,6241860023")
+_admins_str = _env.get("ADMINS", "1675909278")
 ADMINS = [int(x.strip()) for x in _admins_str.split(",") if x.strip().isdigit()]
 
 # Force Join
