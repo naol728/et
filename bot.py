@@ -447,7 +447,7 @@ async def reset_custom_response(key: str):
             del data[key]
             _save_custom_responses(data)
 
-async def reset_all_custom_responses():
+async def res_all_custom_responses():
     async with _responses_lock:
         _save_custom_responses({})
 
@@ -615,7 +615,7 @@ CBEBIRR_NAME    = _env.get("CBEBIRR_NAME", "Naol Meseret")
 CBEBIRR_ACCOUNT = _env.get("CBEBIRR_ACCOUNT", "0967979014")
 
 # Sales log group
-_log_ch = _env.get("LOG_CHANNEL_ID", "-1004295193835")
+_log_ch = _env.get("LOG_CHANNEL_ID", "-1003806764959")
 try:
     LOG_CHANNEL_ID = int(_log_ch)
 except ValueError:
@@ -627,7 +627,7 @@ _admins_str = _env.get("ADMINS", "1675909278")
 ADMINS = [int(x.strip()) for x in _admins_str.split(",") if x.strip().isdigit()]
 
 # Force Join
-_fj_ch = _env.get("FORCE_JOIN_CHANNEL_ID", "-1002205327334")
+_fj_ch = _env.get("FORCE_JOIN_CHANNEL_ID", "-1003806764959")
 try:
     FORCE_JOIN_CHANNEL_ID = int(_fj_ch)
 except ValueError:
@@ -5062,7 +5062,7 @@ async def _handle_admin_state(chat_id, user_id, text: str, message: dict) -> boo
         try:
             ch_id = int(val)
         except ValueError:
-            await send_msg(chat_id, "❌ Invalid Channel ID. It should be a number (e.g. -1001234567890):")
+            await send_msg(chat_id, "❌ Invalid Channel ID. It should be a number (e.g. -1003806764959):")
             return True
         del _admin_state[user_id]
         set_env_setting("LOG_CHANNEL_ID", str(ch_id))
@@ -7454,7 +7454,7 @@ async def handle_callback(cq: dict):
         await api_call("deleteMessage", {"chat_id": chat_id, "message_id": mid})
         await send_msg(chat_id,
             "📢 *Set Sales Log Channel ID*\n\n"
-            "Send your Telegram Channel Chat ID (e.g. `-1004300492255`).\n"
+            "Send your Telegram Channel Chat ID (e.g. `-1003806764959`).\n"
             "⚠️ Note: Make sure the bot is an Admin in this channel!\n\n"
             "Type /cancel to abort.",
             keyboard=build_keyboard([[btn("Cancel", "admin_settings", emoji_key="cross")]])
@@ -7469,7 +7469,7 @@ async def handle_callback(cq: dict):
         await api_call("deleteMessage", {"chat_id": chat_id, "message_id": mid})
         await send_msg(chat_id,
             "🔒 *Set Force Join Channel ID*\n\n"
-            "Send your Force Join Channel Chat ID (e.g. `-1002205327334`).\n"
+            "Send your Force Join Channel Chat ID (e.g. `-1003806764959`).\n"
             "⚠️ Note: The bot must be an Admin in this channel to verify membership.\n\n"
             "Type /cancel to abort.",
             keyboard=build_keyboard([[btn("Cancel", "admin_settings", emoji_key="cross")]])
