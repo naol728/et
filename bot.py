@@ -635,7 +635,7 @@ except ValueError:
 FORCE_JOIN_CHANNEL_LINK = _env.get("FORCE_JOIN_CHANNEL_LINK", "https://t.me/et_market_place")
 FORCE_JOIN_CHANNEL_NAME = _env.get("FORCE_JOIN_CHANNEL_NAME", "ET MARKET")
 SUPPORT_LINK = _env.get("SUPPORT_LINK", "https://t.me/mrdef4fult")
-DEVELOPER_LINK = _env.get("DEVELOPER_LINK", "https://t.me/kidanewold777")
+DEVELOPER_LINK = _env.get("DEVELOPER_LINK", "https://t.me/mrdef4fult")
 
 
 # ─── TERMS & CONDITIONS ───────────────────────────────────────
@@ -1952,7 +1952,7 @@ def kb_main(user_id=None, balance: float = 0.0):
     if user_id and is_admin(user_id):
         rows.append([btn("👑 Admin Control Panel", "admin_panel", emoji_key="other", style="success")])
     else:
-        rows.append([btn("👨‍💻 Developed By @kidanewold777", url=DEVELOPER_LINK, emoji_key="other")])
+        rows.append([btn("👨‍💻 Developed By @mrdef4fult", url=DEVELOPER_LINK, emoji_key="other")])
     return build_keyboard(rows)
 
 def build_support_screen():
@@ -2224,7 +2224,7 @@ def build_dev_screen():
     m = Msg()
     m.emoji("diamond").text(" ").bold("Developer & Engineering Profile").nl()
     m.text("━━━━━━━━━━━━━━━━━━━━").nl()
-    m.emoji("star").text(" Lead Architect: ").bold("@kidanewold777").nl()
+    m.emoji("star").text(" Lead Architect: ").bold("@mrdef4fult").nl()
     m.emoji("thunder").text(" System: ").bold("ET Market Engine 2.0").nl()
     m.emoji("check").text(" Status: ").bold("Verified Official Bot Developer ✅").nl()
     m.text("━━━━━━━━━━━━━━━━━━━━").nl()
@@ -2236,7 +2236,7 @@ def build_dev_screen():
     m.emoji("shield").text(" ").bold("Custom Development & Inquiries:").nl()
     m.text("Need a custom Telegram bot, automated e-commerce store, payment gateway integration, or AI assistant? Get in touch directly!").nl(2)
     m.text("━━━━━━━━━━━━━━━━━━━━").nl()
-    m.emoji("support").text(" Tap the button below to message ").bold("@kidanewold777").text(":")
+    m.emoji("support").text(" Tap the button below to message ").bold("@mrdef4fult").text(":")
     return m.build()
 
 
@@ -2866,7 +2866,7 @@ def reply_kb_main(user_id=None) -> dict:
     if user_id and is_admin(user_id):
         rows.append([{"text": "👑 Admin Control Panel"}])
     else:
-        rows.append([{"text": "👨‍💻 Developed By @kidanewold777"}])
+        rows.append([{"text": "👨‍💻 Developed By @mrdef4fult"}])
     return {
         "keyboard": rows,
         "resize_keyboard": True,
@@ -5833,10 +5833,10 @@ async def handle_message(msg: dict):
         await send_msg(chat_id, t, ent, kb_admin_panel())
         return
 
-    elif text in ("/developer", "/dev", "👨‍💻 Developed By @kidanewold777", "💎 Developed By @kidanewold777", "👨‍💻 Developed By", "Developed By", "Developer"):
+    elif text in ("/developer", "/dev", "👨‍💻 Developed By @mrdef4fult", "💎 Developed By @mrdef4fult", "👨‍💻 Developed By", "Developed By", "Developer"):
         t, ent = build_dev_screen()
         kb = build_keyboard([
-            [btn("💬 Message Developer (@kidanewold777)", url=DEVELOPER_LINK, emoji_key="support", style="success")],
+            [btn("💬 Message Developer (@mrdef4fult)", url=DEVELOPER_LINK, emoji_key="support", style="success")],
             [btn("📢 Official Channel", url=FORCE_JOIN_CHANNEL_LINK, emoji_key="channel")],
             [btn("🏠 Main Menu", "back_main", emoji_key="back")],
         ])
